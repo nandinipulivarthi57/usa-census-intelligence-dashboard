@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>USA Census Intelligence Dashboard</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+  <script src="https://js.arcgis.com/4.29/"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+<div id="appContainer">
+
+  <div id="sidebar">
+  <h3>USA Census Intelligence Dashboard</h3>
+<p style="font-size:11px; color:#666; margin-top:4px; margin-bottom:12px;">
+  Population • Demographics • Spatial Analysis
+</p>
+  <label for="stateInput">Search County/State:</label>
+  <input type="text" id="stateInput" placeholder="e.g. Dallas or Texas" />
+  <button id="applyBtn">Apply</button>
+
+  <!-- Proximity section -->
+  <label for="proximityDistance">Proximity Distance (miles):</label>
+  <input type="number" id="proximityDistance" 
+    placeholder="e.g. 50" 
+    min="1" max="500" value="50"/>
+
+  <div id="results">Results will appear here</div>
+  
+  <label for="rendererSelect">View Counties By:</label>
+<select id="rendererSelect">
+  <option value="density">Population Density</option>
+  <option value="population">Total Population</option>
+  <option value="age">Median Age</option>
+  <option value="households">Households</option>
+</select>
+</div>
+
+  <div id="viewDiv">
+<div id="mapToolbar">
+
+  <!-- Zoom to Selection -->
+  <button id="zoomToSelectionBtn" title="Zoom to Selection">
+    <span class="esri-icon-zoom-in-magnifying-glass"></span>
+  </button>
+
+  <div class="toolbar-separator"></div>
+
+  <!-- Select Tools Group -->
+  <div id="selectGroup">
+    <button id="selectBtn" title="Select Features">
+      <span class="esri-icon-cursor"></span>
+    </button>
+    <div id="selectSubToolbar">
+      <button data-tool="rectangle" title="Rectangle Select">
+        <span class="esri-icon-checkbox-unchecked"></span>
+      </button>
+      <button data-tool="circle" title="Circle Select">
+        <span class="esri-icon-radio-unchecked"></span>
+      </button>
+      <button data-tool="polygon" title="Polygon Select">
+        <span class="esri-icon-polyline"></span>
+      </button>
+      <button data-tool="point" title="Point Select">
+        <span class="esri-icon-map-pin"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="toolbar-separator"></div>
+
+  <!-- Measure Tools Group -->
+  <div id="measureGroup">
+    <button id="measureBtn" title="Measure">
+      <span class="esri-icon-measure"></span>
+    </button>
+    <div id="measureSubToolbar">
+      <button id="distanceBtn" data-measure="distance" title="Measure Distance">
+        <span class="esri-icon-measure-line"></span>
+      </button>
+      <button id="areaBtn" data-measure="area" title="Measure Area">
+        <span class="esri-icon-measure-area"></span>
+      </button>
+      <select id="unitSelect">
+        <optgroup label="Distance">
+          <option value="miles">Miles</option>
+          <option value="kilometers">Kilometers</option>
+          <option value="meters">Meters</option>
+          <option value="feet">Feet</option>
+        </optgroup>
+        <optgroup label="Area">
+          <option value="square-miles">Square Miles</option>
+          <option value="square-kilometers">Square Kilometers</option>
+          <option value="square-meters">Square Meters</option>
+          <option value="acres">Acres</option>
+          <option value="hectares">Hectares</option>
+        </optgroup>
+      </select>
+    </div>
+  </div>
+
+  <div class="toolbar-separator"></div>
+
+  <!-- Identify -->
+  <button id="identityBtn" title="Identify">
+    <span class="esri-icon-description"></span>
+  </button>
+
+  <div class="toolbar-separator"></div>
+
+<button id="basemapBtn" title="Change Basemap">
+  <span class="esri-icon-basemap"></span>
+</button>
+  <!-- Clear -->
+  <button id="clearBtn" title="Clear Selection">
+    <span class="esri-icon-erase"></span>
+  </button>
+
+ <button id="heatmapBtn" title="Toggle Heat Map"
+  style="font-size: 14px;">
+  🔥
+</button>
+
+<div class="toolbar-separator"></div>
+
+
+<button id="proximityBtn" title="Find Nearby Cities">
+  <span class="esri-icon-radio-checked"></span>
+</button>
+
+</div>
+
+
+</div>
+
+  <script
+  src="app.js"> </script>
+  </script>
+</body>
+</html>

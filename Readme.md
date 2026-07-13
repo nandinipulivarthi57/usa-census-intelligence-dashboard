@@ -36,6 +36,6 @@ ArcGIS Maps SDK for JavaScript 4.x
 ## 👩‍💻 Author
 **Hima Nandini Pulivarthi**  
 nandinipulivarthi57@gmail.com  
-+1 469-431-1662  
++1 214 466 9630 
 [LinkedIn](your-linkedin-url)  
 [GitHub](https://github.com/nandinipulivarthi57)
